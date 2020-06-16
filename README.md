@@ -14,7 +14,7 @@ As the API is private, you will need to sign all your requests with an API Key. 
 You can use all the below endpoints, if some other SAMMI core related functionality is needed, this can be added. List below is subject & open to change.
 
 **API URL Direct** : `https://qeymwp4cs6.execute-api.eu-west-1.amazonaws.com/dev`\
-**API URL via our domain** : `https://api.sammi-select.co.uk/mock` [might not work]
+**API URL via our domain** : `https://api.sammi-select.co.uk/mock` [might not work/fixing]
 
 * [Get quick information about all candidates](docs/candidates.md) : `GET /candidates`
 * [Get more detailed information about a specific candidate](docs/candidate.md) : `GET /candidate/{id}`
