@@ -4,84 +4,26 @@ SAMMI core mock API for use during development of video conferencing software pl
 
 ## API Key
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+As the API is private, you will need to sign all your requests with an API Key. Angelos will provide one. In your requests, set the value of the `x-api-key` header to the value of your API Key.
 
-### Prerequisites
+`x-api-key` : `1111111111aaaaaaaaaabbbbbbbbbb1111111111`
 
-What things you need to install the software and how to install them
 
-```
-Give examples
-```
+### Available endpoints
 
-### Installing
+You can use all the below endpoints, if some other SAMMI core related functionality is needed, this can be added through a mock integration.
 
-A step by step series of examples that tell you how to get a development env running
+**API URL Direct** : `https://qeymwp4cs6.execute-api.eu-west-1.amazonaws.com/dev`
+**API URL via our domain** : `https://api.sammi-select.co.uk/mock` [might not work]
 
-Say what the step will be
+* [Get quick information about all candidates](docs/candidates.md) : `GET /candidates`
+* [Get more detailed information about a specific candidate](docs/candidate.md) : `GET /candidate/{id}`
+* [Get quick information about all stations](docs/stations.md) : `GET /stations`
+* [Get more detailed information about a single station](docs/station.md) : `GET /station/{station_id}`
 
-```
-Give the example
-```
+The below might not be necessary initially but may be useful later on:
+* [Get general status (none, in progess, done/ready) of feedback generation for a candidate](docs/candidatefeedbackstatus.md) : `GET /candidate/{id}/feedback/status`
+* [Get overall feedback (all stations) for a candidate](docs/candidatefeedback.md) : `GET /candidate/{id}/feedback`
+* [Get feedback for a specific candidate, for a specific station](docs/candidatefeedbackstation.md) : `GET /candidate/{id}/feedback/station/{station_id}`
+* [Start feedback generation for a specific candidate, for a specific station](docs/candidatefeedbackstationgenerate.md) : `GET /candidate/{id}/feedback/station/{station_id}/generate`
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
