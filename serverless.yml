@@ -1,0 +1,166 @@
+org: angeloschristides
+app: sammi-mock-api
+service: mock-sammi-api
+
+
+provider:
+  name: aws
+  runtime: python3.7
+  region: eu-west-1
+
+
+
+functions:
+  get-all-candidates:
+    handler: api/handler.mock #handler.hello
+    events:
+      - http:
+          path: candidates
+          cors: true
+          method: get
+          integration: mock
+          request:
+            template:
+              application/json: '{"statusCode": 200}'
+          response:
+            template: ${file(mock-responses/candidates-response.js):mockResponse}
+            statusCodes:
+              201:
+                pattern: ''
+  
+  get-candidate:
+    handler: api/handler.mock #handler.hello
+    events:
+      - http:
+          path: candidate/{id}
+          cors: true
+          method: get
+          integration: mock
+          request:
+            template:
+              application/json: '{"statusCode": 200}'
+          response:
+            template: ${file(mock-responses/candidate-response.js):mockResponse}
+            statusCodes:
+              201:
+                pattern: ''
+
+  feedback-status:
+    handler: api/handler.mock #handler.hello
+    events:
+      - http:
+          path: candidate/{id}/feedback/status
+          cors: true
+          method: get
+          integration: mock
+          request:
+            template:
+              application/json: '{"statusCode": 200}'
+          response:
+            template: ${file(mock-responses/feedback-status-response.js):mockResponse}
+            statusCodes:
+              201:
+                pattern: ''
+
+  feedback-view-all:
+    handler: api/handler.mock #handler.hello
+    events:
+      - http:
+          path: candidate/{id}/feedback
+          cors: true
+          method: get
+          integration: mock
+          request:
+            template:
+              application/json: '{"statusCode": 200}'
+          response:
+            template: ${file(mock-responses/feedback-view-response.js):mockResponse}
+            statusCodes:
+              201:
+                pattern: ''
+
+  feedback-view-station:
+    handler: api/handler.mock #handler.hello
+    events:
+      - http:
+          path: candidate/{id}/feedback/station/{station_id}
+          cors: true
+          method: get
+          integration: mock
+          request:
+            template:
+              application/json: '{"statusCode": 200}'
+          response:
+            template: ${file(mock-responses/feedback-view-station-response.js):mockResponse}
+            statusCodes:
+              201:
+                pattern: ''
+
+  feedback-generate:
+    handler: api/handler.mock #handler.hello
+    events:
+      - http:
+          path: candidate/{id}/feedback/station/{station_id}/generate
+          cors: true
+          method: get
+          integration: mock
+          request:
+            template:
+              application/json: '{"statusCode": 200}'
+          response:
+            template: ${file(mock-responses/feedback-generate-response.js):mockResponse}
+            statusCodes:
+              201:
+                pattern: ''
+
+  stations:
+    handler: api/handler.mock #handler.hello
+    events:
+      - http:
+          path: stations
+          cors: true
+          method: get
+          integration: mock
+          request:
+            template:
+              application/json: '{"statusCode": 200}'
+          response:
+            template: ${file(mock-responses/stations-response.js):mockResponse}
+            statusCodes:
+              201:
+                pattern: ''
+
+  station:
+    handler: api/handler.mock #handler.hello
+    events:
+      - http:
+          path: station/{station_id}
+          cors: true
+          method: get
+          integration: mock
+          request:
+            template:
+              application/json: '{"statusCode": 200}'
+          response:
+            template: ${file(mock-responses/station-response.js):mockResponse}
+            statusCodes:
+              201:
+                pattern: ''
+
+
+#functions:
+#  hello:    handler: handler.hello
+#    events:
+#      - http:
+#          path: hello
+#          cors: true
+#          method: get
+#          integration: mock
+#          request:
+#            template:
+#              application/json: '{"statusCode": 200}'
+#          response:
+#            template: '{"code": 200,"message": "Helloworld!"}'
+#            statusCodes:
+#              201:
+#                pattern: ''

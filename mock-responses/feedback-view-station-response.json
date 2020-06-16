@@ -1,0 +1,25 @@
+{
+    "statusCode": 200,
+    "body":
+    {
+
+        "candidate_id": 111111,
+        "station_id": "station_1",
+        "feedback": 
+        {
+            "attribute1": 0.1234,
+            "attribute2": 0.1234,
+            "attribute3": 0.1234
+        }
+
+    }
+
+
+    ,
+    "headers":
+    {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "true"
+    }
+
+}

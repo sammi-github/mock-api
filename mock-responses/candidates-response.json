@@ -1,0 +1,21 @@
+{
+    "statusCode": 200,
+    "body":
+    {
+        "all_candidates": [
+        {
+            "id": 111111,
+            "name": "angelos"
+        },
+        {
+            "id": 111112,
+            "name": "john"
+        }]
+    },
+    "headers":
+    {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "true"
+    }
+
+}

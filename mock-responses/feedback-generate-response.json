@@ -1,0 +1,20 @@
+{
+    "statusCode": 200,
+    "body":
+    {
+
+        "candidate_id": 111111,
+        "station_id": 1,
+        "message": "Feedback generation for [candidate 111111][station 1] started successfully..."
+
+    }
+
+
+    ,
+    "headers":
+    {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "true"
+    }
+
+}
